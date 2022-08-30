@@ -63,7 +63,7 @@ export const FlexibleSlider = (props: FlexSliderProps) => {
   },[activeIdx, dotsCount, props.isLooped]);
 
   const onClickLeft = () => {
-    if (offset + stepWidth < 0) {
+    if (offset + stepWidth <= 0) {
       setOffset(offset + stepWidth);
       setActiveIdx(activeIdx-1);
     } else if (props.isLooped) {
@@ -76,7 +76,7 @@ export const FlexibleSlider = (props: FlexSliderProps) => {
   };
 
   const onClickRight = () => {
-    if (offset - stepWidth > -maxOffset) {
+    if (offset - stepWidth >= -maxOffset) {
       setOffset(offset - stepWidth);  
       setActiveIdx(activeIdx+1);
     } else if (props.isLooped) {
